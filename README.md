@@ -2,7 +2,9 @@
 
 Deploying Web Application for Glanik Healthcare Solutions  (GHS) Limited Using Kubernetes
 
-docker build -t ghs-nginx-app20 .
+**Building web application on container:** docker build -t ghs-nginx-app20 .
+
+**Executing the powershell script:** .\powershell.ps1
 
 
 
