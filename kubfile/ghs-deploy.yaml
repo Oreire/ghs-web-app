@@ -7,7 +7,7 @@ metadata:
   labels:
     app: ghs-web
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: ghs-web
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: docker.io/library/ghs-nginx-app9:latest # change to your image name
+        image: docker.io/library/ghs-nginx-app10:latest # change to your image name
         imagePullPolicy: Always
         ports:
         - containerPort: 80

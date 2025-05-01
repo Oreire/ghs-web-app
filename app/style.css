@@ -1,104 +1,59 @@
-/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f8fb;
-    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* Dark Mode */
-.dark-mode {
-    background-color: #222;
-    color: #f4f8fb;
-}
-
-/* Header */
 header {
-    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #004d99;
+    padding: 15px;
 }
 
-/* Navigation Menu */
 nav ul {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    background: #0073e6;
-    padding: 10px;
-    border-radius: 8px;
 }
 
 nav ul li {
-    list-style: none;
     margin: 0 15px;
 }
 
 nav ul li a {
-    text-decoration: none;
     color: white;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: color 0.3s ease-in-out;
+    text-decoration: none;
 }
 
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-/* Hero Section */
 #hero {
     text-align: center;
-    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
-    color: white;
     padding: 50px;
-    border-radius: 8px;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: white;
 }
 
 .cta-button {
     display: inline-block;
-    background: #ffcc00;
-    color: #333;
-    padding: 12px 20px;
+    padding: 10px 20px;
+    background: #ff6600;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
     border-radius: 5px;
-    transition: background 0.3s ease-in-out;
 }
 
-.cta-button:hover {
-    background: #ff9900;
-}
-
-/* Service Cards */
 .service-card {
     background: white;
-    border-radius: 10px;
     padding: 20px;
     margin: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    background: #eef9ff;
-}
-
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background: #0073e6;
+    background: #004d99;
     color: white;
-    border-radius: 8px;
-}
-
-footer a {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #ff9900;
 }
