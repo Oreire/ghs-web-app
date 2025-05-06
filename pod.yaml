@@ -1,0 +1,78 @@
+---
+# kubernetes pod configuration file
+# This file contains the configuration for a pod running an nginx container.
+# The pod is configured with resource limits and requests for CPU and memory.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+      name: nginx-deployment
+      labels:
+        app: nginx
+spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: nginx
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          containers:
+            - name: nginx-container
+              image: nginx:latest
+              ports:
+              - containerPort: 80
+              resources:
+                requests:
+                  memory: "64Mi"
+                  cpu: "250m"
+                limits:
+                  memory: "128Mi"
+                  cpu: "500m"
+          restartPolicy: Always
+          nodeSelector:
+            kubernetes.io/hostname: ghs-node-1
+          tolerations:
+            - key: "node-role.kubernetes.io/master"
+              operator: "Exists"
+              effect: "NoSchedule"
+            - key: "node-role.kubernetes.io/worker"
+              operator: "Exists"
+              effect: "NoSchedule"
+            - key: "node-role.kubernetes.io/ghs-node-1"
+              operator: "Exists"
+              effect: "NoSchedule"
+            - key: "node-role.kubernetes.io/ghs-node-2"
+              operator: "Exists"
+              effect: "NoSchedule"
+        
+          affinity:
+            nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                    - ghs-node-1
+                    - ghs-node-2
+            # This file contains the configuration for a service that exposes the nginx deployment.
+      # The service is configured to use a LoadBalancer type and listens on port 80.
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: nginx-service
+        labels:
+          app: nginx
+      spec:
+        selector:
+          app: nginx
+        ports:
+          - protocol: TCP
+            port: 80
+            targetPort: 80
+        type: LoadBalancer     
+        kind: Service 
+        

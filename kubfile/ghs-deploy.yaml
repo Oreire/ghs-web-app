@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: docker.io/library/ghs-nginx-app28:latest # change to your image name
+        image: docker.io/library/ghs-nginx-app36:latest # change to your image name
         imagePullPolicy: Always
         ports:
         - containerPort: 80
