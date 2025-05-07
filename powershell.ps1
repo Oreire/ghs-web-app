@@ -4,7 +4,7 @@ $appName = "ghs-web-app"
 $image = "docker.io/library/ghs-nginx-app20:latest"  # Replace with your built application image
 $deploymentName = "ghs-web-deployment"
 $serviceName = "ghs-web-service"
-
+# Set the context to the desired Kubernetes cluster
 # Check if Kubernetes is Running
 Write-Host "Checking Kubernetes Cluster Status..."
 kubectl cluster-info
