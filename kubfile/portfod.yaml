@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: argocd-port-forward-job
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: port-forward
+        image: bitnami/kubectl
+        command:
+        - /bin/sh
+        - -c
+        - |
+          kubectl port-forward svc/ghs-service -n argocd 31444:80 &
+          kubectl port-forward svc/argocd-server -n argocd 8000:443 &
+      restartPolicy: Never
