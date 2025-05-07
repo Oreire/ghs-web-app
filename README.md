@@ -19,3 +19,4 @@ Deploying Web Application for Glanik Healthcare Solutions  (GHS) Limited Using K
         </div>
    
 
+ArgoCD Password: 6cVCKkggqh6mIvPz
