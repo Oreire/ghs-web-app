@@ -87,9 +87,19 @@
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <form action="https://formspree.io/f/xgvyelpq" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <!-- Formspree form -->
+    <form action="https://formspree.io/f/xgvyelpq" method="POST">
+        <label>
+            Your email:
+            <input type="email" name="email" required>
+        </label>
+        <br>
+        <label>
+            Your message:
+            <textarea name="message" required></textarea>
+        </label>
+        <br>
+        <button type="submit">Send</button>
 
       </form>
     </section>
