@@ -2,6 +2,12 @@
 
 Deploying Web Application for Glanik Healthcare Solutions  (GHS) Limited Using Kubernetes
 
+Overview:
+Delivered a Kubernetes‑based deployment of a healthcare web application for Glanik Healthcare Solutions, ensuring scalability, resilience, and streamlined service delivery. The solution leveraged container orchestration to automate application management, optimize resource utilization, and provide fault‑tolerant infrastructure. By simulating production‑ready environments, the deployment reinforced best practices in cloud‑native architecture, enabling secure, efficient, and highly available healthcare service delivery.
+
+---
+
+
 **Building web application on container:** docker build -t ghs-nginx-app20 .
 
 **Executing the powershell script:** .\powershell.ps1
